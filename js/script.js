@@ -4,8 +4,8 @@ d3.csv("data/cities_and_population.csv").then(function(data) {
     // Konversi tipe data numerik
     data.forEach(d => {
         d.population = +d.population;  // Ubah string populasi ke angka
-        d.x = +d.x;  // Ubah koordinat x ke angka
-        d.y = +d.y;  // Ubah koordinat y ke angka
+        d.x = +d.x;  
+        d.y = +d.y;  
     });
 
     // Filter hanya kota di Uni Eropa
