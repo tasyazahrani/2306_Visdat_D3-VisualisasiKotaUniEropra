@@ -1,8 +1,8 @@
 // Memuat file CSV secara otomatis dari URL atau lokasi tertentu
-d3.csv("data/sandwiches.csv").then(function(csvData) {
+d3.csv("data/sandwiches.csv").then(function(data) {
     
     // Konversi tipe data numerik
-    csvData.forEach(d => {
+    data.forEach(d => {
         d.price = +d.price;  // Ubah harga dari string ke angka
     });
 
@@ -22,7 +22,7 @@ d3.csv("data/sandwiches.csv").then(function(csvData) {
 
     // Tambahkan lingkaran berdasarkan data sandwich
     svg.selectAll("circle")
-        .data(csvData)
+        .data(data)
         .enter()
         .append("circle")
         .attr("cx", (d, i) => i * 85 + 50) 
@@ -34,7 +34,7 @@ d3.csv("data/sandwiches.csv").then(function(csvData) {
 
     // Tambahkan label nama sandwich
     svg.selectAll("text")
-        .data(csvData)
+        .data(data)
         .enter()
         .append("text")
         .attr("x", (d, i) => i * 85 + 50)
